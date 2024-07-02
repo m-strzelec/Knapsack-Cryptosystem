@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="685.0" prefWidth="741.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="krypto.javafx.Controller">
+    <padding>
+        <Insets bottom="10.0" left="20.0" right="20.0" top="2.0" />
+    </padding>
+    <AnchorPane prefHeight="556.0" prefWidth="701.0">
+        <TextArea fx:id="taKeyPublic" layoutX="1.0" layoutY="119.0" prefHeight="37.0" prefWidth="700.0" wrapText="true" />
+        <Label fx:id="lKeyPublic" layoutX="289.0" layoutY="84.0" text="Klucz publiczny">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <TextArea fx:id="taKeyPrivate" layoutY="199.0" prefHeight="38.0" prefWidth="700.0" wrapText="true" />
+        <Label fx:id="lKeyPrivate" layoutX="291.0" layoutY="164.0" text="Klucz prywatny">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+        <TextArea fx:id="taMessage" layoutX="14.0" layoutY="275.0" prefHeight="200.0" prefWidth="260.0" promptText="..." wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></TextArea>
+        <TextArea fx:id="taMessageCipher" layoutX="426.0" layoutY="275.0" prefHeight="200.0" prefWidth="260.0" promptText="..." wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font></TextArea>
+        <Label fx:id="lKnapsack" layoutX="134.0" layoutY="6.0" prefHeight="70.0" prefWidth="435.0" text="Algorytm Plecakowy" textFill="#9dc3e4">
+            <font>
+                <Font size="48.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnKeySave" layoutX="300.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveKeys" prefWidth="100.0" text="Zapisz klucze" wrapText="true" />
+        <Button fx:id="btnKeyRead" layoutX="300.0" layoutY="320.0" mnemonicParsing="false" onAction="#loadKeys" prefWidth="100.0" text="Wczytaj klucze" wrapText="true" />
+        <Button fx:id="btnGenKeys" layoutX="300.0" layoutY="350.0" mnemonicParsing="false" onAction="#generateKeys" prefWidth="100.0" text="Generuj klucze" wrapText="true" />
+        <Button fx:id="btnGenerate" layoutX="300.0" layoutY="380.0" mnemonicParsing="false" onAction="#generateText" prefWidth="100.0" text="Generuj tekst" wrapText="true" />
+        <Button fx:id="btnCipher" layoutX="300.0" layoutY="410.0" mnemonicParsing="false" onAction="#cipherText" prefWidth="100.0" text="Szyfruj" wrapText="true" />
+        <Button fx:id="btnDeCipher" layoutX="300.0" layoutY="440.0" mnemonicParsing="false" onAction="#decipherText" prefWidth="100.0" text="Deszyfruj" wrapText="true" />
+        <Label fx:id="lPlainText" layoutX="14.0" layoutY="254.0" text="Tekst jawny" />
+        <Label fx:id="lCipherText" layoutX="426.0" layoutY="254.0" text="Kryptogram" />
+        <Button layoutX="148.0" layoutY="482.0" mnemonicParsing="false" onAction="#savePlainMessage" prefHeight="50.0" prefWidth="126.0" text="Zapisz tekst" textAlignment="CENTER" wrapText="true" />
+        <Button fx:id="btnLoadFromFile" layoutX="13.0" layoutY="482.0" mnemonicParsing="false" onAction="#loadFromFile" prefHeight="50.0" prefWidth="126.0" text="Wczytaj tekst" textAlignment="CENTER" wrapText="true" />
+        <Button fx:id="btnSaveToFile" layoutX="560.0" layoutY="482.0" mnemonicParsing="false" onAction="#saveEncryptedMessage" prefHeight="50.0" prefWidth="126.0" text="Zapisz kryptogram" textAlignment="CENTER" wrapText="true" />
+        <Button fx:id="btnLoadCiphered" layoutX="426.0" layoutY="482.0" mnemonicParsing="false" onAction="#loadEncryptedFile" prefHeight="50.0" prefWidth="126.0" text="Wczytaj kryptogram" textAlignment="CENTER" wrapText="true" />
+      <RadioButton fx:id="rbFile" layoutX="325.0" layoutY="490.0" mnemonicParsing="false" selected="true" text="Plik">
+         <toggleGroup>
+            <ToggleGroup fx:id="group1" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rbWindow" layoutX="325.0" layoutY="510.0" mnemonicParsing="false" text="Okno" toggleGroup="$group1" />
+    </AnchorPane>
+    <Label fx:id="lConsole" alignment="CENTER" contentDisplay="CENTER" prefHeight="1.0" prefWidth="701.0" text="Konsola " textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
+    <TextArea fx:id="taConsole" editable="false" prefHeight="97.0" prefWidth="700.0" promptText="...." wrapText="true" />
+</VBox>
